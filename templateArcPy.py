@@ -1,13 +1,10 @@
-
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-
 
 #execfile(r"C:\Users\CPR\Desktop\codigo_python_arcgis\templateArcPieCita_20170711.py")
 #Se instalo la biblioteca pygresql
 # PyGreSQL-4.1.1.win32-py2.6-pg8.4.msi Esta es la version que se instalo, la que funciono. En Python/Arcgis10/  No instalar en otra direccion
 # En la actualizacion se instalo: PyGreSQL-4.1.1.win32-py2.7-pg8.4.msi, en el directorio: C:\\Python27\ArcGis10.3  La baje de aqui: http://www.pygresql.org/files/
-
 
 #############Script que anade una capa mas############
 
@@ -32,9 +29,6 @@ for shapefile in lista_shapes:
 
     consulta = "select nombre from coberturas where cobertura="+"'"+filename+"'"+""
 
-
-
-
     consulta_escala = "select escala from coberturas where cobertura="+"'"+filename+"'"+""
     consulta_publish = "select publish from coberturas where cobertura="+"'"+filename+"'"+""
 
@@ -55,11 +49,8 @@ for shapefile in lista_shapes:
 
     cita_shape = "<ita>"+titulo_shapeEstilo[0]+"</ita>("+titulo_shapeEstilo[1]
 
-
     titulo_shape = titulo_shape.replace("Distribución potencial", "")
     titulo_shape = titulo_shape.replace("Sitios de recolecta", "")
-
-############3
 
     resultado_escala = conn.query(consulta_escala)
     rows_escala = resultado_escala.namedresult()
